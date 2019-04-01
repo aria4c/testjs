@@ -1,0 +1,23 @@
+<div id="objects">
+    <mat-expansion-panel expanded="true">
+        <mat-expansion-panel-header>
+            <mat-panel-title>Objects</mat-panel-title>
+            <mat-panel-description>
+                Here the list all objects
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+    
+        <div class="inner">
+            <mat-list>
+                <mat-list-item *ngFor="let item of objects">
+                    <img src={{getImagePath(item.image)}} alt="" />
+                    <span *ngIf="!selectedObject || (selectedObject && selectedObject.id !== item.id)" (click)="selectObject(item)">{{item.name}}</span>
+                    <strong *ngIf="selectedObject && selectedObject.id === item.id">{{item.name}}</strong>
+                    <i class="material-icons" (click)="delete(item.id)">delete</i>
+                </mat-list-item>
+            </mat-list>
+        
+            <button mat-raised-button color="primary" (click)="openDialog()">Add object</button>
+        </div>
+    </mat-expansion-panel>
+</div>

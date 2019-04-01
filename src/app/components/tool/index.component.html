@@ -1,0 +1,16 @@
+<div id="tool">
+    <mat-expansion-panel expanded="true" *ngIf="selectedTool">
+        <mat-expansion-panel-header>
+            <mat-panel-title>Tool: {{selectedTool.id}}</mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div class="inner">
+            <div *ngIf="selectedTool.id === 'TEXT'">
+                <app-tool-text [(scene)]="scene" [(camera)]="camera"></app-tool-text>
+            </div>
+            <div *ngIf="selectedTool.id === 'BACKGROUND'">
+                <app-tool-background [(scene)]="scene" [(camera)]="camera"></app-tool-background>
+            </div>
+        </div>
+    </mat-expansion-panel>
+</div>

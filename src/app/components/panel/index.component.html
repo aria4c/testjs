@@ -1,0 +1,11 @@
+<div id="tools">
+    <mat-expansion-panel expanded="true">
+        <mat-expansion-panel-header>
+            <mat-panel-title>Tools</mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div class="inner">
+            <i [class.current]="selectedTool && item.id === selectedTool.id" (click)="selectTool(item)" class="material-icons" *ngFor="let item of items">{{item.icon}}</i>
+        </div>
+    </mat-expansion-panel>
+</div>
